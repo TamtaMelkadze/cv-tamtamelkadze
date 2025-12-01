@@ -1,0 +1,575 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+main {
+    position: relative;
+}
+
+.cv-header {
+  background: #ffffff;
+  padding: 24px 40px 18px;
+}
+
+.container-flex {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 70px;
+}
+
+/* Photo */
+.cv-photo img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  /* object-fit: cover; */
+  border: 4px solid #f4f4f4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Text block */
+.cv-heading {
+  flex: 1;
+  border-right: 10px solid #08030c;
+
+}
+
+
+
+/* Name */
+.cv-name {
+  margin: 0;
+  font-size: 2.4rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.cv-name .first-name {
+  background: linear-gradient(90deg, #E0C3FC 0%, #8EC5FC 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+.cv-name .last-name {
+  color: #08030c;  
+  font-weight: 800;
+}
+
+/* Role (right side of the bar) */
+
+.cv-title {
+  margin: 0;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.1;
+  
+}
+
+.cv-title .second-title {
+  background: linear-gradient(90deg, #FA709A 0%, #FEE140 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+
+
+
+/* mobile version */
+@media (max-width: 600px) {
+  .cv-header {
+    padding: 16px 20px;
+  }
+
+  .container-flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .cv-name {
+    font-size: 2rem;
+  }
+
+  .cv-title {
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+  }
+
+    /* remove border on small screens */
+  .cv-heading {
+    border-right: none;
+    padding-right: 0;
+  }
+
+}
+
+
+/* ===== MAIN 2-COLUMN LAYOUT ===== */
+
+.cv-main {
+  max-width: 900px;
+  margin: 0 auto;
+  /* padding: 24px 40px 40px; */
+  display: grid;
+  grid-template-columns: 230px 1fr; /* მარცხენა ვიწრო, მარჯვენა ფართო */
+  gap: 40px;
+}
+
+/* left column – პერსონალური ინფორმაცია */
+.cv-left {
+  border-right: 0.5px solid #9F9F9F; 
+  padding-right: 24px;
+}
+
+/* right column – პროფილი და შემდეგ Work/Education */
+.cv-right {
+  padding-left: 24px;
+}
+
+/* ბლოკის სათაურები: PERSONAL / PROFILE და ა.შ. */
+.block-title {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+/* საერთო wrapper თითო სექციაზე */
+.block {
+  margin-bottom: 24px;
+  /* margin-top: 20px; */
+}
+
+/* info rows – Name / Birthday */
+.info-row {
+  margin-bottom: 5px;
+}
+
+.info-label {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #666666;
+}
+
+.info-value {
+  font-size: 0.9rem;
+  color: #222222;
+}
+
+
+
+/* Software block */
+.software-item {
+    margin-bottom: 18px;
+}
+
+.software-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+/* White background bar */
+.software-bar {
+    width: 100%;
+    height: 14px;
+    background: #f4f4ff;     
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+/* Gradient fill */
+.software-fill {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #84FAB0 0%, #8FD3F4 100%);
+}
+
+/* Levels */
+.level-100  { width: 100%; }
+.level-60  { width: 60%; }
+.level-85  { width: 85%; }
+.level-95  { width: 95%; }
+
+
+
+
+/* პროფილის ტექსტი */
+.profile-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333333;
+}
+
+.divider {
+  width: 100%;
+  height: 0.5px;
+  background-color: #D9D9D9;
+  margin: 12px 0 20px 0;
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .cv-main {
+    grid-template-columns: 1fr;  /* ორი სვეტი → ერთი სვეტი */
+    padding: 16px 20px 24px;
+    gap: 24px;
+  }
+
+  .cv-left {
+    border-right: none;
+    padding-right: 0;
+  }
+
+  .cv-right {
+    padding-left: 0;
+  }
+}
+
+
+
+
+/* ===== competence circles ===== */
+.skills-row {
+  display: flex;
+  gap: 40px;
+  margin-top: 24px;
+}
+
+/* ერთი ბურთის wrapper */
+.skill-ring {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+/* თვითონ რგოლი, სადაც ივსება ხაზი */
+.ring {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: relative;
+  /* კონიკ-გრადიენტი, თავიდან 0°-ზეა დახატული */
+  background: conic-gradient(from -90deg,
+    #84FAB0 0deg,
+    #84FAB0 0deg,
+    #E5E5E5 0deg
+  );
+
+  /* შუა ნაწილი გავჭრათ, რომ რგოლი დარჩეს */
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 8px), #000 0);
+          mask: radial-gradient(farthest-side, transparent calc(100% - 8px), #000 0);
+
+  animation: fillRing 2.5s linear infinite;
+}
+
+/* ტექსტი ცენტრში */
+.ring-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: #111;
+}
+
+/* აქ უკვე ვხატავთ წრეს ნაბიჯ-ნაბიჯ – 5%-ით ვზრდი */
+@keyframes fillRing {
+  0%   { background: conic-gradient(from -90deg, #84FAB0 0deg, #84FAB0 0deg, #E5E5E5 0deg); }
+  5%   { background: conic-gradient(from -90deg, #84FAB0 0deg, #8FD3F4 18deg,  #E5E5E5 18deg); }
+  10%  { background: conic-gradient(from -90deg, #84FAB0 0deg, #8FD3F4 36deg,  #E5E5E5 36deg); }
+  15%  { background: conic-gradient(from -90deg, #84FAB0 0deg, #8FD3F4 54deg,  #E5E5E5 54deg); }
+  20%  { background: conic-gradient(from -90deg, #84FAB0 0deg, #8FD3F4 72deg,  #E5E5E5 72deg); }
+  25%  { background: conic-gradient(from -90deg, #84FAB0 0deg, #8FD3F4 90deg,  #E5E5E5 90deg); }
+  30%  { background: conic-gradient(from -90deg, #84FAB0 0deg, #8FD3F4 108deg, #E5E5E5 108deg); }
+  35%  { background: conic-gradient(from -90deg, #84FAB0 0deg, #8FD3F4 126deg, #E5E5E5 126deg); }
+  40%  { background: conic-gradient(from -90deg, #84FAB0 0deg, #8FD3F4 144deg, #E5E5E5 144deg); }
+  45%  { background: conic-gradient(from -90deg, #84FAB0 0deg, #8FD3F4 162deg, #E5E5E5 162deg); }
+  50%  { background: conic-gradient(from -90deg, #84FAB0 0deg, #8FD3F4 180deg, #E5E5E5 180deg); }
+  55%  { background: conic-gradient(from -90deg, #84FAB0 0deg, #8FD3F4 198deg, #E5E5E5 198deg); }
+  60%  { background: conic-gradient(from -90deg, #84FAB0 0deg, #8FD3F4 216deg, #E5E5E5 216deg); }
+  65%  { background: conic-gradient(from -90deg, #84FAB0 0deg, #8FD3F4 234deg, #E5E5E5 234deg); }
+  70%  { background: conic-gradient(from -90deg, #84FAB0 0deg, #8FD3F4 252deg, #E5E5E5 252deg); }
+  75%  { background: conic-gradient(from -90deg, #84FAB0 0deg, #8FD3F4 270deg, #E5E5E5 270deg); }
+  80%  { background: conic-gradient(from -90deg, #84FAB0 0deg, #8FD3F4 288deg, #E5E5E5 288deg); }
+  85%  { background: conic-gradient(from -90deg, #84FAB0 0deg, #8FD3F4 306deg, #E5E5E5 306deg); }
+  90%  { background: conic-gradient(from -90deg, #84FAB0 0deg, #8FD3F4 324deg, #E5E5E5 324deg); }
+  95%  { background: conic-gradient(from -90deg, #84FAB0 0deg, #8FD3F4 342deg, #E5E5E5 342deg); }
+  100% { background: conic-gradient(from -90deg, #84FAB0 0deg, #8FD3F4 360deg, #E5E5E5 360deg); }
+}
+
+
+/* WORK BLOCK */
+.work-block {
+    margin-top: 40px;
+}
+
+/* Wrapper holding all items */
+.work-list {
+    --year-col: 100px;
+    --line-col: 40px;
+    --gap: 10px;
+
+    position: relative;
+    margin-top: 18px;
+}
+
+/* One continuous vertical line */
+
+.work-list::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    bottom: 0;
+    width: 2px;
+    background: #bfbfbf;
+    /*  დოთი არ იჯდა ცენტრში და ლაინი გავწიე მარცხნივ */
+    left: calc(var(--year-col) + var(--gap) + var(--line-col) / 2 - 1px);
+}
+
+
+/* One work row */
+.work-item {
+    display: grid;
+    grid-template-columns: var(--year-col) var(--line-col) 1fr;
+    column-gap: var(--gap);
+    align-items: flex-start;
+    margin-bottom: 35px;
+    position: relative;
+}
+
+/* Year pill */
+.work-year {
+    background: #000;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 6px 16px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+/* Line column (holds the dot) */
+.work-line {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;   
+}
+
+/* DOT centered */
+.work-dot {
+    width: 12px;
+    height: 12px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+
+    /* place dot vertically at top edge = start of the job */
+    top: 0;
+
+    /* fix dot EXACT horizontal center alignment */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+/* Job text */
+.work-info {
+    padding-left: 5px;
+}
+
+.work-position {
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+}
+
+.work-company {
+    margin-top: 3px;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+
+/* hover */
+.work-item {
+    cursor: pointer;
+}
+
+
+.work-year,
+.work-dot,
+.work-position,
+.work-company {
+    transition: all 0.25s ease;
+}
+
+/* HOVER ეფექტი მთელ row-ზე */
+.work-item:hover .work-year {
+    background: linear-gradient(90deg, #84FAB0 0%, #8FD3F4 100%);
+    color: #000; 
+}
+
+.work-item:hover .work-dot {
+    background: linear-gradient(135deg, #84FAB0 0%, #8FD3F4 100%);
+}
+
+.work-item:hover .work-position {
+    color: #84FAB0;
+}
+
+.work-item:hover .work-company {
+    color: #8FD3F4;
+}
+
+
+
+/* EDUCATION BLOCK */
+.education-block {
+    margin-top: 40px;
+}
+
+/* Wrapper */
+.education-list {
+    --year-col: 100px;
+    --line-col: 40px;
+    --gap: 10px;
+
+    position: relative;
+    margin-top: 18px;
+}
+
+/* One continuous vertical line */
+.education-list::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    bottom: 0;
+    width: 2px;
+    background: #bfbfbf;
+
+    left: calc(var(--year-col) + var(--gap) + var(--line-col) / 2 - 1px);
+}
+
+/* One education item */
+.education-item {
+    display: grid;
+    grid-template-columns: var(--year-col) var(--line-col) 1fr;
+    column-gap: var(--gap);
+    align-items: flex-start;
+    margin-bottom: 35px;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Year pill */
+.education-year {
+    background: #000;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 6px 16px;
+    border-radius: 20px;
+    display: inline-block;
+    transition: all 0.25s ease;
+}
+
+/* Line + dot column */
+.education-line {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Dot */
+.education-dot {
+    width: 12px;
+    height: 12px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.25s ease;
+}
+
+/* Text */
+.education-info {
+    padding-left: 5px;
+}
+
+.education-position {
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+}
+
+.education-company {
+    margin-top: 3px;
+    font-size: 0.9rem;
+    color: #444;
+    transition: all 0.25s ease;
+}
+
+/* HOVER effects */
+.education-item:hover .education-year {
+    background: linear-gradient(90deg, #84FAB0 0%, #8FD3F4 100%);
+    color: #000;
+}
+
+.education-item:hover .education-dot {
+    background: linear-gradient(135deg, #84FAB0 0%, #8FD3F4 100%);
+}
+
+.education-item:hover .education-position {
+    color: #84FAB0;
+}
+
+.education-item:hover .education-company {
+    color: #8FD3F4;
+}
+
+
+
+/* sculpture */
+
+.sculpture-bg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    width: 100px;
+    height: 180px;
+
+    background-image: url('assets/Escultures.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+
+    opacity: 0.9; 
+    pointer-events: none; /* რომ არაფერი დაუფაროს ტექსტს */
+}
+
