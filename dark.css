@@ -573,6 +573,31 @@ main {
     pointer-events: none; /* რომ არაფერი დაუფაროს ტექსტს */
 }
 
+/* Hover effect on software bar */
+.software-item:hover .software-fill {
+    background: linear-gradient(90deg, #FA709A 0%, #FEE140 100%);
+    transition: 0.3s ease;
+}
+
+.software-item:hover .software-label {
+    color: #FA709A;
+    transition: 0.3s ease;
+}
+
+
+
+/* HOVER effect for competence circles */
+.skill-ring:hover .ring {
+    background: conic-gradient(from -90deg, #FA709A 0%, #FEE140 360deg) !important;
+    transform: scale(1.08);
+    transition: 0.3s ease;
+}
+
+.skill-ring:hover .ring-label {
+    color: #FA709A;
+    transition: 0.3s ease;
+}
+
 
 
 /* ========== DARK THEME OVERRIDES ========== */
